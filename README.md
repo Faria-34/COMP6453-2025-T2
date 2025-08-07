@@ -45,7 +45,6 @@ The project features:
 ## Folder Structure
 
 ```
-COMP6453_BBSplus/
 ├── BBSplus.ipynb        # Main notebook: BBS+ & Threshold BBS+ implementation, Threshold BBS+ MPC implementation, benchmarks, and test cases
 ├── README.md                  # Project documentation
 ```
