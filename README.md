@@ -55,7 +55,7 @@ $$
 Instead of doing each scalar multiplication separately, a windowed MSM (e.g., Pippenger) groups work:
 
 1. Choose window size w.
-2. Decompose each scalar $ \alpha = \sum_j d_j 2^{w j} $, with digits $ d_j $ in [0, 2^w − 1].
+2. Decompose each scalar α = Σ_j d_j 2^{w·j}, with digits d_j in [0, 2^w − 1].
 3. For each window: bucket points by digit, sum buckets (high → low) to reuse partial sums.
 4. Between windows: apply w doublings to the accumulator and add the window contribution.
 
