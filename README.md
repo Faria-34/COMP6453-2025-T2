@@ -11,7 +11,7 @@ The aim of this project is to implement, benchmark, and validate two cryptograph
 - **BBS+ Signature**: Standard BBS+ multi-message signature over the BLS12-381 curve.
 - **Threshold BBS+ Signature**: A threshold variant using Shamir secret sharing, allowing any subset of `t` out of `n` participants to jointly produce a valid signature.
 - **Threshold BBS+ with MPC (ThresholdBBSMPC)**: An advanced distributed threshold scheme using secure multi-party computation (MPyC), where the signing key is never reconstructed in the clear and all signing operations are performed collaboratively.
-- **BBS+ Signature Optimization**: Using MSM and Multi-Pairing to optimize BBS+
+- **BBS+ Signature Optimization**: Using MSM and Multi-Pairing to optimize BBS+ (It also works in Thershold BBS+)
 
 The project features:
 
@@ -55,7 +55,7 @@ $$
 Instead of doing each scalar multiplication separately, a windowed MSM (e.g., Pippenger) groups work:
 
 1. Choose window size w.
-2. Decompose each scalar α = Σ_j d_j 2^{w·j}, with digits d_j in [0, 2^w − 1].
+2. Decompose each scalar $ \alpha = \sum_j d_j 2^{w j} $, with digits $ d_j $ in [0, 2^w − 1].
 3. For each window: bucket points by digit, sum buckets (high → low) to reuse partial sums.
 4. Between windows: apply w doublings to the accumulator and add the window contribution.
 
