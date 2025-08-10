@@ -47,7 +47,11 @@ The project features:
 
 ### MSM (Multi-Scalar Multiplication)
 We often need sums like:
-$$ B = g_1 + s H_0 + \sum_{i=1}^{\ell} m_i H_i = \sum_{j} \alpha_j P_j $$
+
+$$ 
+B = g_1 + s H_0 + \sum_{i=1}^{\ell} m_i H_i = \sum_{j} \alpha_j P_j 
+$$
+
 Instead of doing each scalar multiplication separately, a windowed MSM (e.g., Pippenger) groups work:
 
 1. Choose window size w.
@@ -58,8 +62,18 @@ Instead of doing each scalar multiplication separately, a windowed MSM (e.g., Pi
 Benefits: Fewer additions and better cache locality; readily parallelizable.
 
 ### Multi-Pairing
-To check $$ e(A, X + e, g_2) = e(B, g_2) $$, compute:
-$$ e(A, X + e, g_2), e(B, g_2)^{-1} \stackrel{?}{=} 1 $$
+To check 
+
+$$ 
+e(A, X + e, g_2) = e(B, g_2) 
+$$
+
+compute:
+
+$$ 
+e(A, X + e, g_2), e(B, g_2)^{-1} \stackrel{?}{=} 1 
+$$
+
 Rather than two full pairings + two final exponentiations:
 - Accumulate both terms in one multi-pairing (Miller loop).
 - Perform a single final exponentiation.
